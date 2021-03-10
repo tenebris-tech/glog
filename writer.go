@@ -1,0 +1,43 @@
+//
+// Copyright (c) 2020-2021 Tenebris Technologies Inc.
+//
+package glog
+
+import (
+	"fmt"
+	"os"
+	"time"
+)
+
+// Custom io.Writer
+type logWriter struct {
+}
+
+func (writer logWriter) Write(bytes []byte) (int, error) {
+	var err error
+
+	// Create timestamp using YYYY-MM-DD HH:MM:SS
+	timestamp := time.Now().Format("2006-01-02 15:04:05")
+
+	// If no log file, just print the log
+	if logFileName == "" {
+		return fmt.Print(timestamp + " " + string(bytes))
+	}
+
+	// If log file is not open, attempt to open it
+	if logFile == nil {
+		logFile, err = os.OpenFile(logFileName, os.O_APPEND|os.O_RDWR|os.O_CREATE, 0644)
+		if err != nil {
+			// Failed
+			fmt.Print(timestamp + " " + "[ERROR] Unable to open log file " + logFileName + " for writing")
+			// Don't try again
+			logFileName = ""
+			logFile = nil
+			// Write the original message
+			return fmt.Print(timestamp + " " + string(bytes))
+		}
+	}
+
+	// Write to the log file
+	return logFile.WriteString(timestamp + " " + string(bytes))
+}
