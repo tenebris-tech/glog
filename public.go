@@ -19,6 +19,11 @@ func Info(event string) {
 }
 
 //goland:noinspection GoUnusedExportedFunction
+func Notice(event string) {
+	gLog("notice", event)
+}
+
+//goland:noinspection GoUnusedExportedFunction
 func Warn(event string) {
 	gLog("warn", event)
 }
@@ -36,6 +41,11 @@ func Debugf(format string, event ...interface{}) {
 //goland:noinspection GoUnusedExportedFunction
 func Infof(format string, event ...interface{}) {
 	gLogf("info", format, event...)
+}
+
+//goland:noinspection GoUnusedExportedFunction
+func Noticef(format string, event ...interface{}) {
+	gLogf("notice", format, event...)
 }
 
 //goland:noinspection GoUnusedExportedFunction
