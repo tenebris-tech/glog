@@ -1,6 +1,7 @@
 //
 // Copyright (c) 2020-2021 Tenebris Technologies Inc.
 //
+
 package glog
 
 import (

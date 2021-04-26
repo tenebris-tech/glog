@@ -1,6 +1,8 @@
 //
 // Copyright (c) 2020-2021 Tenebris Technologies Inc.
 //
+
+// Package glog implements a basic generic logger
 package glog
 
 //goland:noinspection GoUnusedExportedFunction
