@@ -9,3 +9,10 @@ import "os"
 // Optional log file
 var logFileName = ""
 var logFile *os.File = nil
+
+// Specify and manage output format
+var outputFormat = OutputJSON
+
+const OutputJSON = 0
+const OutputNVPairs = 1
+const OutputMessage = 2
