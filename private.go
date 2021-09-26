@@ -8,6 +8,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"log"
+	"strings"
 )
 
 // All log messages with a format string pass through here
@@ -26,6 +27,14 @@ func gLog(level string, msg string) {
 
 // All log messages pass through here
 func event(e LogEvent) {
+
+	// Clean up the message
+	if val, ok := e["message"]; ok {
+		msg := fmt.Sprintf("%v", val)
+		msg = strings.Trim(msg, "\n ")
+		msg = strings.TrimSpace(msg)
+		e["message"] = msg
+	}
 
 	switch outputFormat {
 

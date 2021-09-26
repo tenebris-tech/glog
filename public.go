@@ -95,14 +95,12 @@ func Event(e LogEvent) {
 	val, ok := e["level"]
 	if ok == false || val == "" {
 		e["level"] = "info"
-
 	}
 
 	// There should always be a log message, but just in case...
 	val, ok = e["message"]
 	if ok == false || val == "" {
 		e["message"] = "none"
-
 	}
 
 	// Send event for processing
