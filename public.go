@@ -16,7 +16,7 @@ func New() LogEvent {
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func SetLogFile(fileName string) {
+func SetFile(fileName string) {
 	logFileName = fileName
 }
 
