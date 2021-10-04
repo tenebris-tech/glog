@@ -58,8 +58,16 @@ func event(e LogEvent) {
 		log.Println(tmp)
 
 	case OutputMessage:
+		var level = ""
+
+		if val, ok := e["level"]; ok {
+			level = fmt.Sprintf("%v", val)
+		} else {
+			level = "none"
+		}
+
 		if val, ok := e["message"]; ok {
-			log.Println(val)
+			log.Printf("%s %v", level, val)
 		} else {
 			log.Printf("logger error, message element is missing")
 			log.Printf("raw message: %v", e)
