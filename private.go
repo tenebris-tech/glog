@@ -11,13 +11,13 @@ import (
 	"strings"
 )
 
-// All log messages with a format string pass through here
+// All log messages with a format string pass through this function
 func gLogf(level string, format string, data ...interface{}) {
 	tmp := fmt.Sprintf(format, data...)
 	gLog(level, tmp)
 }
 
-// All unstructured messages pass through here
+// All unstructured messages pass through this function
 func gLog(level string, msg string) {
 	e := New()
 	e["level"] = level
@@ -25,7 +25,7 @@ func gLog(level string, msg string) {
 	event(e)
 }
 
-// All log messages pass through here
+// All log messages pass through this function
 func event(e LogEvent) {
 
 	// Clean up the message

@@ -6,4 +6,9 @@ This package implements a customer logger. It is a work in progress, but the int
 
 All public functions are in public.go
 
+Log events can be passed as single strings, in Printf() format, or as an LogEvent object. The latter is recommended,
+especially for output in JSON format.
+
+Several output formats are supported.
+
 Please see the LICENSE file for licensing information.

@@ -12,6 +12,7 @@ var logFile *os.File = nil
 
 // Specify and manage output format
 var outputFormat = OutputJSON
+var consoleOutput = false
 
 const OutputJSON = 0
 const OutputNVPairs = 1

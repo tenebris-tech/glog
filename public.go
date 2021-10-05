@@ -16,8 +16,13 @@ func New() LogEvent {
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func SetFile(fileName string) {
-	logFileName = fileName
+func ConsoleOutput(b bool) {
+	consoleOutput = b
+}
+
+//goland:noinspection GoUnusedExportedFunction
+func SetFile(s string) {
+	logFileName = s
 }
 
 //goland:noinspection GoUnusedExportedFunction
@@ -39,53 +44,53 @@ func SetFormat(f string) {
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Debug(event string) {
-	gLog("debug", event)
+func Debug(e string) {
+	gLog("debug", e)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Info(event string) {
-	gLog("info", event)
+func Info(e string) {
+	gLog("info", e)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Notice(event string) {
-	gLog("notice", event)
+func Notice(e string) {
+	gLog("notice", e)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Warn(event string) {
-	gLog("warn", event)
+func Warn(e string) {
+	gLog("warn", e)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Error(event string) {
-	gLog("error", event)
+func Error(e string) {
+	gLog("error", e)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Debugf(format string, event ...interface{}) {
-	gLogf("debug", format, event...)
+func Debugf(format string, e ...interface{}) {
+	gLogf("debug", format, e...)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Infof(format string, event ...interface{}) {
-	gLogf("info", format, event...)
+func Infof(format string, e ...interface{}) {
+	gLogf("info", format, e...)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Noticef(format string, event ...interface{}) {
-	gLogf("notice", format, event...)
+func Noticef(format string, e ...interface{}) {
+	gLogf("notice", format, e...)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Warnf(format string, event ...interface{}) {
-	gLogf("warn", format, event...)
+func Warnf(format string, e ...interface{}) {
+	gLogf("warn", format, e...)
 }
 
 //goland:noinspection GoUnusedExportedFunction
-func Errorf(format string, event ...interface{}) {
-	gLogf("error", format, event...)
+func Errorf(format string, e ...interface{}) {
+	gLogf("error", format, e...)
 }
 
 //goland:noinspection GoUnusedExportedFunction
