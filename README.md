@@ -1,8 +1,8 @@
 # glog - Golang Custom Logger
 
-Copyright (c) 2020-2021 Tenebris Technologies Inc. All rights reserved.
+Copyright (c) 2020-2023 Tenebris Technologies Inc. All rights reserved.
 
-This package implements a customer logger. It is a work in progress, but the interface is expected to remain stable.
+This package implements a customer logger.
 
 All public functions are in public.go
 
