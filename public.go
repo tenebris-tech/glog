@@ -23,6 +23,13 @@ func ConsoleOutput(b bool) {
 //goland:noinspection GoUnusedExportedFunction
 func SetFile(s string) {
 	logFileName = s
+
+	// If the log file is open, close it
+	// The new file will be opened on the next write
+	if logFile != nil {
+		_ = logFile.Close()
+		logFile = nil
+	}
 }
 
 //goland:noinspection GoUnusedExportedFunction
